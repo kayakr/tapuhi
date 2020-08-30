@@ -4,6 +4,17 @@ var cheerio = require("cheerio");
 var request = require("request");
 var sqlite3 = require("sqlite3").verbose();
 
+const puppeteer = require('puppeteer');
+ 
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto('https://example.com');
+  await page.screenshot({path: 'example.png'});
+ 
+  await browser.close();
+})();
+
 function initDatabase(callback) {
 	// Set up sqlite database.
 	var db = new sqlite3.Database("data.sqlite");
@@ -40,6 +51,9 @@ function fetchPage(url, callback) {
 }
 
 function run(db) {
+
+	
+	
 	// Use request to read in pages.
 	fetchPage("https://morph.io", function (body) {
 		// Use cheerio to find things in the page with css selectors.
