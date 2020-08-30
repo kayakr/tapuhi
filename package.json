@@ -9,7 +9,7 @@
     "request": "latest",
     "sqlite3": "latest",
     "axios": "latest",
-    "puppeteer": "latest"
+    "puppeteer": "^2.1.1"
   },
   "keywords": [
     "scraper",
