@@ -3,7 +3,7 @@
   "main": "scraper.js",
   "engines": {
     "node": "12.x"
-  }
+  },
   "dependencies": {
     "cheerio": "latest",
     "request": "latest",
